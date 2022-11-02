@@ -12,7 +12,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final controller = PersonagemController(repository: PersonagemRepository());
+ final controller = PersonagemController(repository:PersonagemRepository());
 
   @override
   Widget build(BuildContext context) {
@@ -46,16 +46,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      ImagemPerfil(imagem: snapshot.data![index].imagem),
+                      ImagemPerfil(imagem: snapshot.data![index].image),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            snapshot.data![index].nome!,
+                            snapshot.data![index].name!,
                             style: Theme.of(context).textTheme.bodyLarge,
                           ),
                           Text(
-                            snapshot.data![index].casa!,
+                            snapshot.data![index].house!,
                           ),
                         ],
                       ),

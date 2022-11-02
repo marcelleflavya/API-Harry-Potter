@@ -1,72 +1,76 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 class PersonagemModelo {
-  String nome;
-  String casa;
-  String ator;
-  String imagem;
+  String name;
+  String house;
+  String actor;
+  String image;
 
   PersonagemModelo({
-    required this.nome,
-    required this.casa,
-    required this.ator,
-    required this.imagem,
+    required this.name,
+    required this.house,
+    required this.actor,
+    required this.image,
   });
 
   PersonagemModelo copyWith({
-    String? nome,
-    String? casa,
-    String? ator,
-    String? imagem,
+    String? name,
+    String? house,
+    String? actor,
+    String? image,
   }) {
     return PersonagemModelo(
-      nome: nome ?? this.nome,
-      casa: casa ?? this.casa,
-      ator: ator ?? this.ator,
-      imagem: imagem ?? this.imagem,
+      name: name ?? this.name,
+      house: house ?? this.house,
+      actor: actor ?? this.actor,
+      image: image ?? this.image,
     );
   }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'nome': nome,
-      'casa': casa,
-      'ator': ator,
-      'imagem': imagem,
+      'name': name,
+      'house': house,
+      'actor': actor,
+      'image': image,
     };
   }
 
   factory PersonagemModelo.fromMap(Map<String, dynamic> map) {
     return PersonagemModelo(
-      nome: map['nome'] as String,
-      casa: map['casa'] as String,
-      ator: map['ator'] as String,
-      imagem: map['imagem'] as String,
+      name: map['name'] ?? "",
+      house: map['house'] ?? "",
+      actor: map['actor'] ?? "",
+      image: map['image'] ?? "",
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory PersonagemModelo.fromJson(String source) =>
-      PersonagemModelo.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory PersonagemModelo.fromJson(String source) => PersonagemModelo.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
-    return 'PersonagemModelo(nome: $nome, casa: $casa, ator: $ator, imagem: $imagem)';
+    return 'PersonagemModelo(name: $name, house: $house, actor: $actor, image: $image)';
   }
 
   @override
   bool operator ==(covariant PersonagemModelo other) {
     if (identical(this, other)) return true;
-
-    return other.nome == nome &&
-        other.casa == casa &&
-        other.ator == ator &&
-        other.imagem == imagem;
+  
+    return 
+      other.name == name &&
+      other.house == house &&
+      other.actor == actor &&
+      other.image == image;
   }
 
   @override
   int get hashCode {
-    return nome.hashCode ^ casa.hashCode ^ ator.hashCode ^ imagem.hashCode;
+    return name.hashCode ^
+      house.hashCode ^
+      actor.hashCode ^
+      image.hashCode;
   }
 }

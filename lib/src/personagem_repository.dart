@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 
 class PersonagemRepository {
   final dio =
-      Dio(BaseOptions(baseUrl: 'https://hp-api.herokuapp.com/api/characters'));
+      Dio(BaseOptions(baseUrl: 'https://hp-api.herokuapp.com/api'));
 
   Future<List<PersonagemModelo>> getPersonagem() async {
     try {

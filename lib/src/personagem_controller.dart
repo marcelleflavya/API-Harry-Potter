@@ -2,7 +2,7 @@ import 'package:atividade_flutter/src/personagem_repository.dart';
 import 'package:atividade_flutter/modelos/personagem_modelo.dart';
 
 class PersonagemController {
-  final PersonagemController repository;
+  final PersonagemRepository repository;
 
   const PersonagemController({required this.repository});
 
